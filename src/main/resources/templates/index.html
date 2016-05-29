@@ -1,0 +1,356 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- TITLE OF SITE -->
+    <title>InvviteMe - A Plataforma dos seus Eventos</title>
+
+	<!-- META DATA -->
+    <meta name="description" content="Site InvviteMe" />
+    <meta name="keywords" content="eventos,festas,shows" />
+    <meta name="author" content="WebMobiData Solutions"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+    <!-- =========================
+      FAV AND TOUCH ICONS  
+    ============================== -->
+    <link rel="icon" th:href="@{/images/invviteme-favicon.ico}"/>
+    <link rel="apple-touch-icon" th:href="@{/images/apple-touch-icon.png}"/>
+    <link rel="apple-touch-icon" sizes="72x72" th:href="@{/images/apple-touch-icon-72x72.png}"/>
+    <link rel="apple-touch-icon" sizes="114x114" th:href="@{/images/apple-touch-icon-114x114.png}"/>
+
+    <!-- =========================
+       STYLESHEETS 
+    ============================== -->
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap-theme.min.css}"/>
+
+    <!-- FONT ICON CSS -->
+    <link rel="stylesheet" th:href="@{/icons/styles.css}"/>
+    
+    <!-- OWL CAROUSEL CSS -->
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.css}"/>
+    <link rel="stylesheet" th:href="@{/css/owl.theme.green.css}"/>
+
+    <!-- NIVO LIGHTBOX CSS -->
+    <link rel="stylesheet" th:href="@{/css/nivo-lightbox.css}"/>
+    <link rel="stylesheet" th:href="@{/css/themes/default/default.css}"/>
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+
+    <!-- COLORS -->
+    	 <link rel="stylesheet" th:href="@{/css/colors/red.css}"/> 
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/blue.css}"/> -->
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/blue-munsell.css}"/> -->
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/purple.css}"/> -->
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/green.css}"/> -->
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/orange.css}"/> -->
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/slate.css}"/> -->
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/yellow.css}"/> -->
+
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" th:href="@{/css/responsive.css}"/>
+
+    <!--[if lt IE 9]>
+            <script th:src="@{/js/html5shiv.js}"></script>
+            <script th:src="@{/js/respond.min.js}"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- =========================
+     NAVBAR 
+============================== -->
+<header class="navbar fog-navbar fog-navbar-light navbar-fixed-top navbar-anim" id="main-nav">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#home"><img th:src="@{/images/logo-alt.png}" alt="company name"/></a>			
+		</div>
+		 
+		<!-- MAIN NAVIGATION LINKS -->
+		<nav class="collapse navbar-collapse" id="main-navigation">
+			<ul class="nav navbar-nav navbar-right fog-navbar-nav">
+				<li><a href="#service">Soluções</a></li>
+				<li><a href="#contact">Fale Conosco</a></li>
+				<li><a href="account">Criar Conta</a></li>								
+				<li class="nav-btn"><a href="#home">Entrar</a></li>
+			</ul>
+		</nav>				
+	</div>	
+</header>
+
+<!-- =========================
+     SERVICE HOME - 3
+============================== -->
+<section class="home video-bg service-home-3" id="home">
+	<div class="overlay">
+		<div class="container">			
+			<div class="row">
+				<div class="col-lg-8 col-md-7 mb-75">
+					<div class="home-content">				
+						<h1>Os Melhores Eventos, próximos de você!</h1>
+						<p class="sub-title">Crie, divulgue, gerencie, participe dos principais eventos ao seu redor.</p>
+						<div class="hidden-sm hidden-xs mt-60">
+							<a href="#" class="btn btn-cmd btn-base-alt btn-white">Criar Evento</a>
+						</div>
+					</div>
+				</div>
+				<!-- 
+				<div class="col-lg-4 col-md-5 col-md-offset-0 col-sm-8 col-sm-offset-2 mb-75">
+					<form class="registration-form" id="subscribe">
+						<div class="form-group">
+							<label class="sr-only">Your Name</label>
+							<input type="text" name="registrar-name" class="form-control" placeholder="Your Name"/>
+						</div>
+						<div class="form-group">
+							<label class="sr-only">Your Email</label>
+							<input type="email" name="registrar-email" class="form-control" placeholder="Your Email"/>					
+						</div>						
+						<div class="form-group">
+							<label class="sr-only">Phone Number</label>
+							<input type="tel" name="registrar-phone" class="form-control" placeholder="Phone Number"/>							
+						</div>
+						<button class="btn btn-base btn-block btn-cmd">Get 1 Month FREE Trial Now!</button>
+						<p class="info text-center">No credit card required</p>
+					</form>
+					<p class="success-msg"></p>
+					<p class="error-msg"></p>
+				</div>				
+				-->				
+			</div>
+		</div>
+	</div> <!-- end of /.overlay -->
+</section>
+
+
+<!-- =========================
+     SERVICES 
+============================== -->
+<section class="service service-2" id="service">
+	<div class="container">
+		<!-- SECTION HEADING -->
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+				<header class="section-heading text-center">
+					<h2 class="title-text">Publique e Gerencie</h2>
+					<p class="sub-title">Publique o seu evento e tenha todos os recursos para gerência-lo</p>
+				</header>
+		</div>
+		</div> <!-- /END SECTION HEADING -->
+		<div class="row">
+			<div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 mb-45" data-sr="enter left, move 40px, over 1s">
+				<div class="service-item text-center">
+					<i class="icon icon-basic-picture-multiple"></i>
+					<h4 class="title-text">Crie Eventos Públicos ou Privados</h4>
+					<p>Crie seu evento a partir de seus detalhes</p>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 mb-45" data-sr="enter bottom, move 40px, over 1s, wait 0.5s">
+				<div class="service-item text-center">
+					<i class="icon icon-basic-geolocalize-05"></i>
+					<h4 class="title-text">Crie Listas de Convidados</h4>
+					<p>Crie e gerencie sua lista de convidados. Convide seus amigos e familiares.</p>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 mb-45" data-sr="enter right, move 40px, over 1s">
+				<div class="service-item text-center">
+
+					<i class="icon icon-basic-map"></i>
+					<h4 class="title-text">Monitore seus Eventos</h4>
+					<p>Monitore sua lista de convidados, tenha em mãos todo o controle para monitorar seu evento em realtime</p>
+
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 mb-45" data-sr="enter left, move 40px, over 1s">
+				<div class="service-item text-center">
+					<i class="icon icon-basic-picture-multiple"></i>
+					<h4 class="title-text">Notificações e Alertas</h4>
+					<p>Receba ou envie alertas e lembrentes para os seus convidados</p>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 mb-45" data-sr="enter bottom, move 40px, over 1s, wait 0.5s">
+				<div class="service-item text-center">
+					<i class="icon icon-basic-geolocalize-05"></i>
+					<h4 class="title-text">Check-In Inteligente</h4>
+					<p>Agilize todo o processo de check-in e lista de confirmação, reduza filas do seu evento</p>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 mb-45" data-sr="enter right, move 40px, over 1s">
+				<div class="service-item text-center">
+
+					<i class="icon icon-basic-map"></i>
+					<h4 class="title-text">Hotsite</h4>
+					<p>Crie e divulgue o seu evento através de hotsites personalizados</p>
+
+				</div>
+			</div>
+		</div>
+		<!-- SECTION HEADING -->
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+				<header class="section-heading text-center">
+					<h2 class="title-text">Encontre e Divirta-se</h2>
+					<p class="sub-title">Encontre eventos próximos a você e compartilhe feedbacks</p>
+				</header>
+		</div>
+		</div> <!-- /END SECTION HEADING -->
+		<div class="row">
+			<div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 mb-45" data-sr="enter left, move 40px, over 1s">
+				<div class="service-item text-center">
+					<i class="icon icon-basic-picture-multiple"></i>
+					<h4 class="title-text">Encontre Eventos</h4>
+					<p>Encontre eventos próximos a você e de acordo com os seus gostos</p>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 mb-45" data-sr="enter bottom, move 40px, over 1s, wait 0.5s">
+				<div class="service-item text-center">
+					<i class="icon icon-basic-geolocalize-05"></i>
+					<h4 class="title-text">Convide Amigos e Familiares</h4>
+					<p>Convide seus amigos e familiares, divulgue e compartilhe em sua timeline</p>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-md-offset-0 col-sm-8 col-sm-offset-2 mb-45" data-sr="enter right, move 40px, over 1s">
+				<div class="service-item text-center">
+					<i class="icon icon-basic-map"></i>
+					<h4 class="title-text">Compartilhe Feedbacks Instantâneos</h4>
+					<p>Dê feedbacks instantâneos durante o evento, interaja com os produtores e organizadores</p>
+				</div>
+			</div>
+		</div>
+	</div>	
+</section>
+
+<!-- =========================
+     APP DESCRIPTION - 2
+============================== -->
+<section class="app-description app-description-2" id="app-description">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7 pull-right mb-45" data-sr="enter right, move 40px, over 1s">
+				<img th:src="@{/images/dashboard.png}" alt="Phone" class="img-responsive img-md-right"/>				
+			</div>
+
+			<div class="col-md-5 pull-left mb-45" data-sr="enter left, move 40px, over 1s">
+				<header class="column-heading">
+
+					<i class="icon icon-basic-rss"></i>
+					<h2 class="title-text">Todas Plataformas ao seu alcance</h2>
+
+				</header>	<!-- /.column-heading -->
+
+				<p>Baixe nosso aplicativo, disponível para os principais sistemas operacionais de Tablets e Smartphones</p>
+
+				<ul class="os-icons">
+					<li><i class="icon icon-apple"></i></li>
+					<li><i class="icon icon-android"></i></li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- =========================
+     CONTACT 
+============================== -->
+<div class="contact" id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6 mb-45" data-sr="enter right, move 40px, over 1s, wait 0.4s">
+				<div class="get-in-touch">
+					<h5 class="title-text">WebMobiData Solutions</h5>
+					<address>
+						<p>Avenida Paulista, 0000</p>
+						<p>São Paulo, SP 08100-000</p>
+						<p class="phone">55 11 90000-0000</p>
+					</address>
+				</div> <!-- /.get-in-touch -->				
+				<div class="get-in-touch">				
+					<h5 class="title-text">Siga-Nos</h5>
+					<ul class="social-sites">
+						<li><a href="#"><i class="icon icon-social-facebook-square"></i></a></li>
+						<li><a href="#"><i class="icon icon-social-twitter-square"></i></a></li>
+						<li><a href="#"><i class="icon icon-social-pinterest-square"></i></a></li>
+						<li><a href="#"><i class="icon icon-social-googleplus-square"></i></a></li>
+						<li><a href="#"><i class="icon icon-social-linkedin-square"></i></a></li>
+						<li><a href="#"><i class="icon icon-social-instagram-square"></i></a></li>
+					</ul>
+				</div> <!-- /.get-in-touch -->
+			</div>
+			<div class="col-sm-6 mb-45" data-sr="enter right, move 40px, over 1s">
+				<div class="get-in-touch">					
+					<h5 class="title-text">Fale Conosco</h5>
+					<form id="contact-form" class="contact-form">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label class="sr-only">Seu Nome</label>
+									<input type="text" name="contact-name" id="contact-name" class="form-control" placeholder="Seu Nome*"/>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">									
+									<label class="sr-only">Seu E-mail</label>
+									<input type="email" name="contact-email" id="contact-email" class="form-control" placeholder="Seu E-mail*"/>									
+								</div>
+							</div>
+						</div> <!-- end of /.row -->
+						<div class="form-group">									
+							<label class="sr-only">Assunto</label>
+							<input type="text" name="contact-sub" id="contact-sub" class="form-control" placeholder="Assunto*"/>
+						</div>
+						<div class="form-group">									
+							<label class="sr-only">Sua Mensagem</label>
+							<textarea name="contact-msg" id="contact-msg" class="form-control" cols="3" rows="4" placeholder="Sua Mensagem*"></textarea>
+						</div>
+						<button type="submit" class="btn btn-base-alt btn-cmd">Enviar Mensagem</button>
+					</form>
+					<p class="success-msg">Thank you for contacting with us. We'll get back to you ASAP :)</p>
+					<p class="error-msg">Ops! Something went wrong :(</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- =========================
+     FOOTER 
+============================== -->
+<footer class="footer">
+	<div class="container">
+		<p class="copyright text-center">&copy; 2016 <a href="#">WebMobiData Solutions</a>. All rights reserved.</p>
+	</div>
+</footer>
+
+<!-- =========================
+     SCRIPTS 
+============================== -->
+<script th:src="@{/js/jquery-1.11.2.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/owl.carousel.min.js}"></script>
+<script th:src="@{/js/nivo-lightbox.min.js}"></script>
+<script th:src="@{/js/jquery.fitvids.js}"></script>
+<script th:src="@{/js/smoothscroll.js}"></script>
+<script th:src="@{/js/matchMedia.js}"></script>
+<script th:src="@{/js/jquery.nav.js}"></script>
+<script th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script th:src="@{/js/scrollReveal.min.js}"></script>
+<script th:src="@{/js/jquery.videoBG.js}"></script>
+<script th:src="@{/js/application.js}"></script>
+</body>
+</html>
