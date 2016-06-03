@@ -1,0 +1,206 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>Cadastre - se</title>
+
+	<!-- =========================
+      FAV AND TOUCH ICONS  
+    ============================== -->
+    <link rel="icon" th:href="@{/images/invviteme-favicon.ico}"/>
+    <link rel="apple-touch-icon" th:href="@{/images/apple-touch-icon.png}"/>
+    <link rel="apple-touch-icon" sizes="72x72" th:href="@{/images/apple-touch-icon-72x72.png}"/>
+    <link rel="apple-touch-icon" sizes="114x114" th:href="@{/images/apple-touch-icon-114x114.png}"/>
+
+    <!-- =========================
+       STYLESHEETS 
+    ============================== -->
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap-theme.min.css}"/>
+
+    <!-- FONT ICON CSS -->
+    <link rel="stylesheet" th:href="@{/icons/styles.css}"/>
+    
+    <!-- OWL CAROUSEL CSS -->
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.css}"/>
+    <link rel="stylesheet" th:href="@{/css/owl.theme.green.css}"/>
+
+    <!-- NIVO LIGHTBOX CSS -->
+    <link rel="stylesheet" th:href="@{/css/nivo-lightbox.css}"/>
+    <link rel="stylesheet" th:href="@{/css/themes/default/default.css}"/>
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+
+    <!-- COLORS -->
+    	 <link rel="stylesheet" th:href="@{/css/colors/red.css}"/> 
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/blue.css}"/> -->
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/blue-munsell.css}"/> -->
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/purple.css}"/> -->
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/green.css}"/> -->
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/orange.css}"/> -->
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/slate.css}"/> -->
+    <!-- <link rel="stylesheet" th:href="@{/css/colors/yellow.css}"/> -->
+
+    <!-- RESPONSIVE FIXES -->
+    <link rel="stylesheet" th:href="@{/css/responsive.css}"/>
+
+    <!--[if lt IE 9]>
+            <script th:src="@{/js/html5shiv.js}"></script>
+            <script th:src="@{/js/respond.min.js}"></script>
+    <![endif]-->
+    
+    <style>
+    /******************** NEW ACCOUNT FORM ********************/
+		.new-account-form {
+		  background: #fff;
+		  padding: 30px;
+		}
+		.new-account-form .btn {
+		  margin-top: 30px;
+		}
+		.new-account-form .form-control {
+		  border-radius: 0;
+		  border: 0;
+		  border-bottom: 1px solid #d6d6d6;
+		  padding: 8px 0;
+		}
+		
+		.form-control {
+		  border-color: transparent;
+		  height: 50px;
+		  max-width: 50%;
+		  padding: 8px 20px;
+		  box-shadow: none;
+		  transition: all 0.3s;
+		  color: #707070;
+		  font-size: 1em;
+		}
+		.form-control:focus {
+		  box-shadow: none;
+		}
+		
+		.success-msg,
+		.error-msg {
+		  display: none;
+		  margin-top: 10px;
+		}
+		@media screen and (min-width: 768px) {
+		  .form-inline .form-group {
+		    margin-right: 10px;
+		  }
+		}
+		@media screen and (max-width: 480px) {
+		  .form-inline .btn {
+		    display: block;
+		    width: 100%;
+		  }
+		}
+		
+    </style>
+</head>
+<body>
+<!-- =========================
+     NAVBAR 
+============================== -->
+<header class="navbar fog-navbar fog-navbar-light navbar-fixed-top navbar-anim" id="main-nav">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<img th:src="@{/images/logo-alt.png}" alt="company name"/>	
+		</div>
+		 
+		 <!-- MAIN NAVIGATION LINKS -->
+		<nav class="collapse navbar-collapse" id="main-navigation">
+			<ul class="nav navbar-nav navbar-right fog-navbar-nav">
+				<li><a href="#service">Soluções</a></li>
+				<li><a href="#contact">Fale Conosco</a></li>
+				<li><a href="/user/createAccount">Criar Conta</a></li>								
+				<li class="nav-btn"><a href="#home">Entrar</a></li>
+			</ul>
+		</nav>			
+		
+	</div>	
+</header>
+
+<!-- =========================
+     SERVICE HOME - 3
+============================== -->
+<section class="home video-bg service-home-3" id="home">
+	<div class="overlay">
+		<div class="container">			
+			<div class="row">
+				<div class="col-lg-6 col-md-5 col-md-offset-0 col-sm-8 col-sm-offset-2 mb-75">
+					<form class="new-account-form"  method="post" action="user/createAccount" role="form">
+						<div class="form-group">
+							<label class="sr-only">Name</label>
+							<input type="text" name="user.name" size="30px" placeholder="Name"/>
+							
+							<label class="sr-only">Last Name</label>
+							<input type="text" name="user.lastName" placeholder="Last Name"/>		
+						</div>
+						<div class="form-group">
+							<label class="sr-only">Email</label>
+							<input type="email" name="user.email" size="30px" placeholder="Email"/>					
+						
+							<label class="sr-only">Phone Number</label>
+							<input type="tel" name="user.phone"  placeholder="Phone Number"/>							
+						</div>
+						<div class="form-group">
+							<label class="sr-only">Birthday</label>
+							<input type="text" name="user.birthday" size="30px" placeholder="Birthday"/>
+						
+						 	<input type = "radio" name = "user.gender" id = "male" value = "M" />
+          					<label for = "male">Male</label>
+ 
+          					<input type = "radio" name = "user.gender" id = "female" value = "F" />
+          					<label for = "female">Female</label>
+						</div>
+						<div class="form-group">
+						  <label for="pwd">Password:</label>
+						  <input type="password" name="user.password" id="pwd"/>
+						</div>
+						<button type="submit" onclick="location.href='@Url.Action("Deploy", "MyController")' " class="btn btn-base btn-block btn-cmd">Create Account</button>
+					</form>
+					<p class="success-msg"></p>
+					<p class="error-msg"></p>
+				</div>				
+			</div>
+		</div>
+	</div> <!-- end of /.overlay -->
+</section>
+
+
+<!-- =========================
+     FOOTER 
+============================== -->
+<footer class="footer">
+	<div class="container">
+		<p class="copyright text-center">&copy; 2016 <a href="#">WebMobiData Solutions</a>. All rights reserved.</p>
+	</div>
+</footer>
+
+<!-- =========================
+     SCRIPTS 
+============================== -->
+<script th:src="@{/js/jquery-1.11.2.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/owl.carousel.min.js}"></script>
+<script th:src="@{/js/nivo-lightbox.min.js}"></script>
+<script th:src="@{/js/jquery.fitvids.js}"></script>
+<script th:src="@{/js/smoothscroll.js}"></script>
+<script th:src="@{/js/matchMedia.js}"></script>
+<script th:src="@{/js/jquery.nav.js}"></script>
+<script th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
+<script th:src="@{/js/scrollReveal.min.js}"></script>
+<script th:src="@{/js/jquery.videoBG.js}"></script>
+<script th:src="@{/js/application.js}"></script>
+</body>
+</html>
