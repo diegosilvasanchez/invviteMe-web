@@ -13,13 +13,13 @@ import br.com.web.model.User;
 public class UserController {
 
 	@RequestMapping(value = "user/createAccount", method = RequestMethod.GET)
-	public ModelAndView index(){
-		ModelAndView view = new ModelAndView("user/createAccount");
-		return view;
+	public String index(Model model){		
+		model.addAttribute("user", new User());
+		return "user/createAccount";
 	}
 	
 	@RequestMapping(value =  "user/createAccount" , method = RequestMethod.POST)
-	public ModelAndView create(@ModelAttribute("user") User user, Model model){
+	public ModelAndView create(@ModelAttribute(value = "user") User user, Model model){
 		model.addAttribute("user", user);
 		return new ModelAndView("user/sucess");
 	}

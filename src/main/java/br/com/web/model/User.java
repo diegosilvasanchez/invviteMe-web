@@ -3,6 +3,9 @@ package br.com.web.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 public class User implements Serializable {
 
 	private static final long serialVersionUID = -8933672361653239069L;
@@ -12,6 +15,8 @@ public class User implements Serializable {
 	private String email;
 	private char gender;
 	private String password;
+	
+	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate birthday;
 
 	public String getName() {

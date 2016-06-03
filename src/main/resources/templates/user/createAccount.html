@@ -138,36 +138,36 @@
 		<div class="container">			
 			<div class="row">
 				<div class="col-lg-6 col-md-5 col-md-offset-0 col-sm-8 col-sm-offset-2 mb-75">
-					<form class="new-account-form"  method="post" action="user/createAccount" role="form">
+					<form class="new-account-form"  method="post" th:action="@{/user/createAccount}" th:object="${user}" role="form">
 						<div class="form-group">
 							<label class="sr-only">Name</label>
-							<input type="text" name="user.name" size="30px" placeholder="Name"/>
+							<input type="text" name="user.name" th:field="*{name}" size="30px" placeholder="Name"/>
 							
 							<label class="sr-only">Last Name</label>
-							<input type="text" name="user.lastName" placeholder="Last Name"/>		
+							<input type="text" name="user.lastName" th:field="*{lastName}" placeholder="Last Name"/>		
 						</div>
 						<div class="form-group">
 							<label class="sr-only">Email</label>
-							<input type="email" name="user.email" size="30px" placeholder="Email"/>					
+							<input type="email" name="user.email" th:field="*{email}" size="30px" placeholder="Email"/>					
 						
 							<label class="sr-only">Phone Number</label>
-							<input type="tel" name="user.phone"  placeholder="Phone Number"/>							
+							<input type="tel" name="user.phoneNumber" th:field="*{phoneNumber}"  placeholder="Phone Number"/>							
 						</div>
 						<div class="form-group">
 							<label class="sr-only">Birthday</label>
-							<input type="text" name="user.birthday" size="30px" placeholder="Birthday"/>
+							<input type="date" name="user.birthday" th:field="*{birthday}" size="30px" placeholder="Birthday"/>
 						
-						 	<input type = "radio" name = "user.gender" id = "male" value = "M" />
+						 	<input type = "radio" name = "user.gender" th:field="*{gender}" id="male" value = "M" />
           					<label for = "male">Male</label>
  
-          					<input type = "radio" name = "user.gender" id = "female" value = "F" />
+          					<input type = "radio" name = "user.gender" th:field="*{gender}" id="female" value = "F" />
           					<label for = "female">Female</label>
 						</div>
 						<div class="form-group">
 						  <label for="pwd">Password:</label>
-						  <input type="password" name="user.password" id="pwd"/>
+						  <input type="password" name="user.password" th:field="*{password}" id="pwd"/>
 						</div>
-						<button type="submit" onclick="location.href='@Url.Action("Deploy", "MyController")' " class="btn btn-base btn-block btn-cmd">Create Account</button>
+						<button type="submit" class="btn btn-base btn-block btn-cmd">Create Account</button>
 					</form>
 					<p class="success-msg"></p>
 					<p class="error-msg"></p>
