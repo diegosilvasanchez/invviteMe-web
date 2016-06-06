@@ -136,40 +136,11 @@ $("#contact-form").on('submit', function(e) {
 });
 
 /******************** AJAX REGISTER FORM ********************/
-//
-//$('#register-form').validate({
-//	rules: {
-//		register-name: { required: true, minlength: 2 },
-//		register-email: { required: true, email: true }
-//	},
-//	messages: {
-//		register-name: { required: 'Preencha o campo nome', minlength: 'No mínimo 2 letras' },
-//		register-email: { required: 'Informe o seu email', email: 'Ops, informe um email válido' }
-//
-//	},
-//	submitHandler: function( form ){
-//		var dados = $( form ).serialize();
-//
-//		$.ajax({
-//			type: "POST",
-//			url: $( form ).attr('action'),
-//			data: dados,
-//			success: function( data )
-//			{
-//				alert( data );
-//			}
-//		});
-//
-//		return false;
-//	}
-//});
 
 $("#register-form").on('submit', function(e) {
 	var $form = $('#register-form');
     e.preventDefault();
     
-//    alert($('#male').val());
-  
     if ($('#register-name').val() < 1){
     	
     	$('.get-in-touch .error-msg').text('Nome é Obrigatório');
@@ -236,6 +207,44 @@ $("#register-form").on('submit', function(e) {
                  $('.get-in-touch .error-msg').fadeOut(500);
              }
          });
+    }
+
+    return false;
+});
+
+/******************** LOGIN FORM ********************/
+$( "#login-btn" ).click(function() {
+	$( "#login-div" ).show( "slow", function() {
+	});
+});
+
+$("#login-form").on('submit', function(e) {
+	var $form = $('#login-form');
+    e.preventDefault();
+    
+    if ($('#login-name').val() < 1){
+    	
+    	$('#login-div .error-msg').text('Digite o Usuário');
+        $('#login-div .error-msg').delay(500).fadeIn(1000);
+        $('#login-div .success-msg').fadeOut(500); 
+        
+    } else if ($('#login-password').val() < 1){
+	
+    	$('#login-div .error-msg').text('Digite a Senha');
+        $('#login-div .error-msg').delay(500).fadeIn(1000);
+        $('#login-div .success-msg').fadeOut(500);    
+        
+    } else {    
+		 $.ajax({
+		 	 url: $form.attr('action'),
+		     type: 'post',
+		     data: $form.serialize(),
+		     success: function() {
+		    	 $('#login-div .success-msg').text('Usuário Logado');
+		         $('#login-div .success-msg').delay(500).fadeIn(1000);
+		         $('#login-div .error-msg').fadeOut(500);
+		     }
+		 });
     }
 
     return false;
