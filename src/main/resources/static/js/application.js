@@ -135,6 +135,111 @@ $("#contact-form").on('submit', function(e) {
     return false;
 });
 
+/******************** AJAX REGISTER FORM ********************/
+//
+//$('#register-form').validate({
+//	rules: {
+//		register-name: { required: true, minlength: 2 },
+//		register-email: { required: true, email: true }
+//	},
+//	messages: {
+//		register-name: { required: 'Preencha o campo nome', minlength: 'No mínimo 2 letras' },
+//		register-email: { required: 'Informe o seu email', email: 'Ops, informe um email válido' }
+//
+//	},
+//	submitHandler: function( form ){
+//		var dados = $( form ).serialize();
+//
+//		$.ajax({
+//			type: "POST",
+//			url: $( form ).attr('action'),
+//			data: dados,
+//			success: function( data )
+//			{
+//				alert( data );
+//			}
+//		});
+//
+//		return false;
+//	}
+//});
+
+$("#register-form").on('submit', function(e) {
+	var $form = $('#register-form');
+    e.preventDefault();
+    
+//    alert($('#male').val());
+  
+    if ($('#register-name').val() < 1){
+    	
+    	$('.get-in-touch .error-msg').text('Nome é Obrigatório');
+        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
+        $('.get-in-touch .success-msg').fadeOut(500);    	 
+        
+    } else if ($('#register-lastname').val() < 1) {
+    	
+    	$('.get-in-touch .error-msg').text('Sobrenome é Obrigatório');
+        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
+        $('.get-in-touch .success-msg').fadeOut(500);  
+        
+        
+    } else if ($('#register-email').val() < 1) {
+    	
+    	$('.get-in-touch .error-msg').text('Email é Obrigatório');
+        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
+        $('.get-in-touch .success-msg').fadeOut(500);  
+        
+        
+    } else if ($('#register-phone').val() < 1) {
+    	
+    	$('.get-in-touch .error-msg').text('Telefone é Obrigatório');
+        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
+        $('.get-in-touch .success-msg').fadeOut(500);  
+        
+        
+    } else if ($('#register-birthday').val() < 1) {
+    	
+    	$('.get-in-touch .error-msg').text('Data de Nascimento é Obrigatório');
+        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
+        $('.get-in-touch .success-msg').fadeOut(500);  
+        
+        
+    } else if ($('#register-password').val() < 1) {
+    	
+    	$('.get-in-touch .error-msg').text('Senha é Obrigatório');
+        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
+        $('.get-in-touch .success-msg').fadeOut(500);  
+        
+        
+    } else if ($('#register-password-confirm').val() < 1) {
+    	
+    	$('.get-in-touch .error-msg').text('Confirmação de Senha Obrigatório');
+        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
+        $('.get-in-touch .success-msg').fadeOut(500);  
+        
+        
+    } else if (!isValidEmail( $('#register-email').val()) ){
+        	
+        	$('.get-in-touch .error-msg').text('E-mail inválido');
+            $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
+            $('.get-in-touch .success-msg').fadeOut(500);    
+            
+          
+    } else {
+    	
+    	 $.ajax({
+         	url: $form.attr('action'),
+             type: 'post',
+             data: $form.serialize(),
+             success: function() {
+                 $('.get-in-touch .success-msg').delay(500).fadeIn(1000);
+                 $('.get-in-touch .error-msg').fadeOut(500);
+             }
+         });
+    }
+
+    return false;
+});
 
 
 /******************** NIVO LIGHTBOX ********************/

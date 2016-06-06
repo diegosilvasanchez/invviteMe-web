@@ -189,7 +189,8 @@ video {
 .pricing-table-2,
 .purchase-book,
 .video,
-.contact {
+.contact,
+.register {
   padding: 125px 0 80px;
 }
 @media screen and (max-width: 480px) {
@@ -200,7 +201,8 @@ video {
   .pricing-table-2,
   .purchase-book,
   .video,
-  .contact {
+  .contact,
+  .register {
     padding: 100px 0 55px;
   }
 }
@@ -578,7 +580,7 @@ video {
 | CONTACT
 |----------------------------------------------------------------------------
 */
-.contact {
+.contact{
   background-color: #545151;
 }
 .get-in-touch + .get-in-touch {
@@ -601,6 +603,37 @@ video {
   background-color: #f6f6f7;
 }
 .get-in-touch .form-control:focus {
+  background-color: transparent;
+}
+
+/*
+|----------------------------------------------------------------------------
+| CONTACT
+|----------------------------------------------------------------------------
+*/
+.register {
+  background-color: #f6f6f7;
+}
+.register .get-in-touch + .get-in-touch {
+  margin-top: 45px;
+}
+.register .get-in-touch .title-text {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.register .get-in-touch .phone:before {
+  margin-right: 10px;
+  vertical-align: middle;
+  font-family: nf;
+  content: "\e1cc";
+}
+.register .get-in-touch .form-group {
+  margin-bottom: 30px;
+}
+.register .get-in-touch .form-control {
+  background-color: #545151;
+}
+.register .get-in-touch .form-control:focus {
   background-color: transparent;
 }
 /*
