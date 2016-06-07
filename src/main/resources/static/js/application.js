@@ -218,39 +218,6 @@ $( "#login-btn" ).click(function() {
 	});
 });
 
-$("#login-form").on('submit', function(e) {
-	var $form = $('#login-form');
-    e.preventDefault();
-    
-    if ($('#login-name').val() < 1){
-    	
-    	$('#login-div .error-msg').text('Digite o Usuário');
-        $('#login-div .error-msg').delay(500).fadeIn(1000);
-        $('#login-div .success-msg').fadeOut(500); 
-        
-    } else if ($('#login-password').val() < 1){
-	
-    	$('#login-div .error-msg').text('Digite a Senha');
-        $('#login-div .error-msg').delay(500).fadeIn(1000);
-        $('#login-div .success-msg').fadeOut(500);    
-        
-    } else {    
-		 $.ajax({
-		 	 url: $form.attr('action'),
-		     type: 'post',
-		     data: $form.serialize(),
-		     success: function() {
-		    	 $('#login-div .success-msg').text('Usuário Logado');
-		         $('#login-div .success-msg').delay(500).fadeIn(1000);
-		         $('#login-div .error-msg').fadeOut(500);
-		     }
-		 });
-    }
-
-    return false;
-});
-
-
 /******************** NIVO LIGHTBOX ********************/
 $('.lightbox').nivoLightbox();
 
@@ -261,6 +228,7 @@ $('.video-container').fitVids();
 
 /******************** SCROLL ANIMATION ********************/
 window.sr = new scrollReveal();
+
 
 
 

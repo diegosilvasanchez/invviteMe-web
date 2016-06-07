@@ -25,6 +25,8 @@
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/bootstrap-theme.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap-formhelpers.css}" media="screen"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap-formhelpers.min.css}" media="screen"/>
 
     <!-- FONT ICON CSS -->
     <link rel="stylesheet" th:href="@{/icons/styles.css}"/>
@@ -57,6 +59,8 @@
             <script th:src="@{/js/html5shiv.js}"></script>
             <script th:src="@{/js/respond.min.js}"></script>
     <![endif]-->
+    
+
 </head>
 <body>
 <!-- =========================
@@ -106,14 +110,18 @@
 					<form id="login-form" class="login-form" method="post" th:action="@{/login/login}" th:object="${login}" role="form">
 						<div class="form-group">
 							<label class="sr-only">Usuário</label>
-							<input type="text" name="login.username" id="login-name" th:field="*{username}" class="form-control" placeholder="Usuário"/>
+							<input type="text" name="login.username" th:field="*{username}" class="form-control" placeholder="Usuário" required="required"/>
 						</div>
 						<div class="form-group">
 							<label class="sr-only">Senha</label>
-							<input type="password" name="login.password" id="login-password" th:field="*{password}" class="form-control" placeholder="Senha"/>					
+							<input type="password" name="login.password" th:field="*{password}" class="form-control" placeholder="Senha" required="required"/>					
 						</div>			
 						<button type="submit" class="btn btn-base btn-block btn-cmd">Entrar</button>
 					</form>
+						<div class="social-buttons">
+							<a href="#" class="btn btn-fb"><i class="fa fa-facebook"></i> Facebook</a>
+							<a href="#" class="btn btn-tw"><i class="fa fa-twitter"></i> Twitter</a>
+						</div>
 					<p class="success-msg"></p>
 					<p class="error-msg"></p>
 				</div>				
@@ -293,23 +301,23 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label class="sr-only">Seu Nome</label>
-									<input type="text" name="contact-name" id="contact-name" class="form-control" placeholder="Seu Nome*"/>
+									<input type="text" name="contact-name" id="contact-name" class="form-control" placeholder="Seu Nome*" required="required"/>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">									
 									<label class="sr-only">Seu E-mail</label>
-									<input type="email" name="contact-email" id="contact-email" class="form-control" placeholder="Seu E-mail*"/>									
+									<input type="email" name="contact-email" id="contact-email" class="form-control" placeholder="Seu E-mail*" required="required"/>									
 								</div>
 							</div>
 						</div> <!-- end of /.row -->
 						<div class="form-group">									
 							<label class="sr-only">Assunto</label>
-							<input type="text" name="contact-sub" id="contact-sub" class="form-control" placeholder="Assunto*"/>
+							<input type="text" name="contact-sub" id="contact-sub" class="form-control" placeholder="Assunto*" required="required"/>
 						</div>
 						<div class="form-group">									
 							<label class="sr-only">Sua Mensagem</label>
-							<textarea name="contact-msg" id="contact-msg" class="form-control" cols="3" rows="4" placeholder="Sua Mensagem*"></textarea>
+							<textarea name="contact-msg" id="contact-msg" class="form-control" cols="3" rows="4" placeholder="Sua Mensagem*" required="required"></textarea>
 						</div>
 						<button type="submit" class="btn btn-base-alt btn-cmd">Enviar Mensagem</button>
 					</form>
@@ -337,13 +345,13 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label class="sr-only">Seu Nome</label>
-									<input type="text" name="user.name" id="register-name" th:field="*{name}" class="form-control" placeholder="Seu Nome*"/>
+									<input type="text" name="user.name" id="register-name" th:field="*{name}" class="form-control" placeholder="Seu Nome*" required="required" />
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">									
 									<label class="sr-only">Sobrenome</label>
-									<input type="text" name="user.lastName" id="register-lastname" th:field="*{lastName}" class="form-control" placeholder="Seu Sobrenome*"/>									
+									<input type="text" name="user.lastName" id="register-lastname" th:field="*{lastName}" class="form-control" placeholder="Seu Sobrenome*" required="required" />									
 								</div>
 							</div>
 						</div> <!-- end of /.row -->
@@ -352,13 +360,13 @@
 							<div class="col-md-6">
 								<div class="form-group">									
 									<label class="sr-only">Seu E-mail</label>
-									<input type="email" name="user.email" id="register-email" th:field="*{email}" class="form-control" placeholder="Seu E-mail*"/>									
+									<input type="email" name="user.email" id="register-email" th:field="*{email}" class="form-control" placeholder="Seu E-mail*" required="required" />									
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<label class="sr-only">Telefone</label>
-									<input type="text" name="user.phoneNumber" id="register-phone" th:field="*{phoneNumber}" class="form-control" placeholder="Seu Telefone*"/>
+									<input type="text" name="user.phoneNumber" id="register-phone" class="form-control" th:field="*{phoneNumber}" required="required" />
 								</div>
 							</div>
 						</div> <!-- end of /.row -->
@@ -367,12 +375,12 @@
 							<div class="col-md-6">
 								<div class="form-group">									
 									<label class="sr-only">Data Nascimento</label>
-									<input type="date" name="user.birthday" id="register-birthday" th:field="*{birthday}" class="form-control" placeholder="Seu Aniversário*"/>									
+									<input type="date" name="user.birthday" id="register-birthday" th:field="*{birthday}" class="form-control" placeholder="Seu Aniversário*" required="required" />									
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type = "radio" name = "user.gender" th:field="*{gender}" id="male" value = "M" />
+									<input type = "radio" name = "user.gender" th:field="*{gender}" id="male" value = "M" checked="checked" />
           							<label for = "male">Masculino</label>
  
           							<input type = "radio" name = "user.gender" th:field="*{gender}" id="female" value = "F" />
@@ -385,13 +393,13 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label class="sr-only">Senha</label>
-									<input type="password" name="user.password" id="register-password" th:field="*{password}" class="form-control" placeholder="Sua Senha*"/>
+									<input type="password" name="user.password" id="register-password" th:field="*{password}" class="form-control" placeholder="Sua Senha*" required="required" />
 								</div>	
 							</div>	
 							<div class="col-md-6">
 								<div class="form-group">	
 									<label class="sr-only">Senha</label>
-									<input type="password" id="register-password-confirm" class="form-control" placeholder="Confirme sua Senha*"/>
+									<input type="password" id="register-password-confirm" class="form-control" placeholder="Confirme sua Senha*" required="required" />
 								</div>
 							</div>
 						</div> <!-- end of /.row -->
@@ -417,7 +425,7 @@
 </footer>
 
 <!-- =========================
-     SCRIPTS 
+    			SCRIPTS 
 ============================== -->
 <script th:src="@{/js/jquery-1.11.2.min.js}"></script>
 <script th:src="@{/js/bootstrap.min.js}"></script>
