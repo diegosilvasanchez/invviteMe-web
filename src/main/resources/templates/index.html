@@ -25,8 +25,6 @@
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/bootstrap-theme.min.css}"/>
-    <link rel="stylesheet" th:href="@{/css/bootstrap-formhelpers.css}" media="screen"/>
-    <link rel="stylesheet" th:href="@{/css/bootstrap-formhelpers.min.css}" media="screen"/>
 
     <!-- FONT ICON CSS -->
     <link rel="stylesheet" th:href="@{/icons/styles.css}"/>
@@ -102,7 +100,7 @@
 						<h1>Os Melhores Eventos, próximos de você!</h1>
 						<p class="sub-title">Crie, divulgue, gerencie, participe dos principais eventos ao seu redor.</p>
 						<div class="hidden-sm hidden-xs mt-60">
-							<a href="#" class="btn btn-cmd btn-base-alt btn-white">Criar Evento</a>
+							<a href="#" id="create-event" class="btn btn-cmd btn-base-alt btn-white">Criar Evento</a>
 						</div>
 					</div>
 				</div>
@@ -366,7 +364,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label class="sr-only">Telefone</label>
-									<input type="text" name="user.phoneNumber" id="register-phone" class="form-control" th:field="*{phoneNumber}" required="required" />
+									<input type="text" name="user.phoneNumber" id="register-phone" class="form-control" placeholder="Digite o Telefone*" th:field="*{phoneNumber}" required="required" />
 								</div>
 							</div>
 						</div> <!-- end of /.row -->
@@ -375,15 +373,15 @@
 							<div class="col-md-6">
 								<div class="form-group">									
 									<label class="sr-only">Data Nascimento</label>
-									<input type="date" name="user.birthday" id="register-birthday" th:field="*{birthday}" class="form-control" placeholder="Seu Aniversário*" required="required" />									
+									<input type="text" name="user.birthday" id="register-birthday" th:field="*{birthday}" class="form-control" placeholder="Seu Aniversário*" required="required" />									
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<input type = "radio" name = "user.gender" th:field="*{gender}" id="male" value = "M" checked="checked" />
+									<input type = "radio" name = "user.gender" id="male" th:field="*{gender}" th:value = "M" />
           							<label for = "male">Masculino</label>
  
-          							<input type = "radio" name = "user.gender" th:field="*{gender}" id="female" value = "F" />
+          							<input type = "radio" name = "user.gender" id="female" th:field="*{gender}" th:value = "F" />
           							<label for = "female">Feminino</label>
 								</div>
 							</div>
@@ -438,6 +436,7 @@
 <script th:src="@{/js/jquery.ajaxchimp.min.js}"></script>
 <script th:src="@{/js/scrollReveal.min.js}"></script>
 <script th:src="@{/js/jquery.videoBG.js}"></script>
+<script th:src="@{/js/jquery.maskedinput.js}"></script>
 <script th:src="@{/js/application.js}"></script>
 </body>
 </html>

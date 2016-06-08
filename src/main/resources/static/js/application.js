@@ -136,66 +136,19 @@ $("#contact-form").on('submit', function(e) {
 });
 
 /******************** AJAX REGISTER FORM ********************/
+$("#register-phone").mask("(999) 99999-9999");
+$("#register-birthday").mask("99/99/9999");
+
+$("#male").attr("checked",true);
 
 $("#register-form").on('submit', function(e) {
 	var $form = $('#register-form');
     e.preventDefault();
-    
-    if ($('#register-name').val() < 1){
-    	
-    	$('.get-in-touch .error-msg').text('Nome é Obrigatório');
+  
+    if($("#register-password").val() != $("#register-password-confirm").val()){
+    	$('.get-in-touch .error-msg').text('Senha diferente da Confirmação de Senha!');
         $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
-        $('.get-in-touch .success-msg').fadeOut(500);    	 
-        
-    } else if ($('#register-lastname').val() < 1) {
-    	
-    	$('.get-in-touch .error-msg').text('Sobrenome é Obrigatório');
-        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
-        $('.get-in-touch .success-msg').fadeOut(500);  
-        
-        
-    } else if ($('#register-email').val() < 1) {
-    	
-    	$('.get-in-touch .error-msg').text('Email é Obrigatório');
-        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
-        $('.get-in-touch .success-msg').fadeOut(500);  
-        
-        
-    } else if ($('#register-phone').val() < 1) {
-    	
-    	$('.get-in-touch .error-msg').text('Telefone é Obrigatório');
-        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
-        $('.get-in-touch .success-msg').fadeOut(500);  
-        
-        
-    } else if ($('#register-birthday').val() < 1) {
-    	
-    	$('.get-in-touch .error-msg').text('Data de Nascimento é Obrigatório');
-        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
-        $('.get-in-touch .success-msg').fadeOut(500);  
-        
-        
-    } else if ($('#register-password').val() < 1) {
-    	
-    	$('.get-in-touch .error-msg').text('Senha é Obrigatório');
-        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
-        $('.get-in-touch .success-msg').fadeOut(500);  
-        
-        
-    } else if ($('#register-password-confirm').val() < 1) {
-    	
-    	$('.get-in-touch .error-msg').text('Confirmação de Senha Obrigatório');
-        $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
-        $('.get-in-touch .success-msg').fadeOut(500);  
-        
-        
-    } else if (!isValidEmail( $('#register-email').val()) ){
-        	
-        	$('.get-in-touch .error-msg').text('E-mail inválido');
-            $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
-            $('.get-in-touch .success-msg').fadeOut(500);    
-            
-          
+        $('.get-in-touch .success-msg').fadeOut(500);
     } else {
     	
     	 $.ajax({
@@ -213,7 +166,7 @@ $("#register-form").on('submit', function(e) {
 });
 
 /******************** LOGIN FORM ********************/
-$( "#login-btn" ).click(function() {
+$( "#login-btn, #create-event" ).click(function() {
 	$( "#login-div" ).show( "slow", function() {
 	});
 });
@@ -228,8 +181,5 @@ $('.video-container').fitVids();
 
 /******************** SCROLL ANIMATION ********************/
 window.sr = new scrollReveal();
-
-
-
 
 });
