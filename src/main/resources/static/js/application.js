@@ -150,19 +150,37 @@ $("#register-form").on('submit', function(e) {
         $('.get-in-touch .error-msg').delay(500).fadeIn(1000);
         $('.get-in-touch .success-msg').fadeOut(500);
     } else {
-    	
-    	 $.ajax({
-         	url: $form.attr('action'),
-             type: 'post',
-             data: $form.serialize(),
-             success: function() {
-                 $('.get-in-touch .success-msg').delay(500).fadeIn(1000);
-                 $('.get-in-touch .error-msg').fadeOut(500);
-             }
-         });
+//    	var data = {
+//    	 name: $('#register-name').val(),
+//         lastname: $('#register-lastname').val(),
+//         email: $('#register-email').val(),
+//         phone: $("#register-phone").val(),
+//         birthday: $("#register-birthday").val(),
+//         gender: $("#register-gender").val(),
+//         dataString: 'name=' + $(this).name 
+//         			+ '&lastname=' + $(this).lastname 
+//         			+ '&email=' + $(this).email
+//         			+ '&phone=' + $(this).phone
+//         			+ '&birthday=' + $(this).birthday
+//         			+ '&gender=' + $(this).gender
+//    	};
+//    	
+//        //get the action-url of the form
+//        var actionurl = e.currentTarget.action;
+//    	
+//    	 $.ajax({
+//    		 url: actionurl,
+//             type: 'post',
+//             dataType: 'json',
+//             data: $form.serialize(),
+//             success: function() {
+//                 $('.get-in-touch .success-msg').delay(500).fadeIn(1000);
+//                 $('.get-in-touch .error-msg').fadeOut(500);
+//             }
+//         });
+    	$("#register-form").submit();
     }
 
-    return false;
 });
 
 /******************** LOGIN FORM ********************/

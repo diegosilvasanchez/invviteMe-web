@@ -34,18 +34,18 @@ public class IndexController {
 		view.addObject(new User());
 		view.addObject(new Login());
 		
-		//TODO retirar apenas teste
-		String url = userApi.getUrlApi(UriApi.USER_FIND_USER_BY_ID);		
-		Map<String, Object> params = new HashMap<String, Object>();
-		params.put("id", 1);
-		try {
-			ObjectMapper mapper = new ObjectMapper();
-			ResponseEntity<Object> response = userApi.getClient(url, params);
-			Users user = mapper.convertValue(response.getBody(), Users.class);
-			logger.info("User "+user.getName());
-		} catch (ApiException e) {		
-			e.printStackTrace();
-		}
+//		//TODO retirar apenas teste
+//		String url = userApi.getUrlApi(UriApi.USER_FIND_USER_BY_ID);		
+//		Map<String, Object> params = new HashMap<String, Object>();
+//		params.put("id", 1);
+//		try {
+//			ObjectMapper mapper = new ObjectMapper();
+//			ResponseEntity<Object> response = userApi.getClient(url, params);
+//			Users user = mapper.convertValue(response.getBody(), Users.class);
+//			logger.info("User "+user.getName());
+//		} catch (ApiException e) {		
+//			e.printStackTrace();
+//		}
 		return view;
 	}
 }
