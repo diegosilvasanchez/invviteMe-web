@@ -10,14 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.web.exception.ApiException;
 import br.com.web.model.User;
-import br.com.web.model.client.Users;
 import br.com.web.restclient.ClientApi;
 import br.com.web.restclient.UriApi;
 
@@ -38,7 +37,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value =  "user/createAccount" , method = RequestMethod.POST)
-	public ModelAndView createAccount(@ModelAttribute(value = "user") User user, Model model){
+	public ModelAndView createAccount(@Valid User user, BindingResult bindingResult, Model model){
 		
 		String url = userApi.getUrlApi(UriApi.USER_CREATE);
 		Map<String, Object> params = new HashMap<String, Object>();
@@ -50,7 +49,6 @@ public class UserController {
 		} catch (ApiException e) {		
 			e.printStackTrace();
 		}
-		
 		
 		model.addAttribute("user", user);
 		return new ModelAndView("user/sucess");
